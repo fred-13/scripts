@@ -5,6 +5,7 @@
 import json, requests, datetime
 
 max_exc = []
+max_exc_service = 0
 max_exc_index = 0
 time_now = datetime.datetime.now()
 
@@ -89,8 +90,9 @@ if json.loads(response_json1.text)['total_results'] > 200:
         max_exc.insert(i, json.loads(response_json2.text)['total_results'])
         # print(max_exc[i]) # - если расскомментировать эту строку то можно увидеть вывод ошибок всех сервисов
 
-    for i in range(len(max_exc) - 1):
-        if max_exc[i] > max_exc[i + 1]:
+    for i in range(len(max_exc)):
+        if max_exc_service < max_exc[i]:
+            max_exc_service = max_exc[i]
             max_exc_index = i
 
     # Если раскомментировать эти строки то можно увидеть какой сервис мы нашли
