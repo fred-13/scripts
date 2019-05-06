@@ -1,0 +1,23 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+00 3 * * *	root	/home/universal_backup.sh _bk &>/tmp/backup_bk.log
+00 1 * * 1	root	/home/universal_backup.sh _1bk &>/tmp/backup_1bk.log
+00 1 * * 2	root	/home/universal_backup.sh _2bk &>/tmp/backup_2bk.log
+00 1 * * 3	root	/home/universal_backup.sh _3bk &>/tmp/backup_3bk.log
+00 1 * * 4	root	/home/universal_backup.sh _4bk &>/tmp/backup_4bk.log
+00 1 * * 5	root	/home/universal_backup.sh _5bk &>/tmp/backup_5bk.log
+00 1 * * 6	root	/home/universal_backup.sh _6bk &>/tmp/backup_6bk.log
+00 1 * * 7	root	/home/universal_backup.sh _7bk &>/tmp/backup_7bk.log
