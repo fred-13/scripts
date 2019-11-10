@@ -102,7 +102,7 @@ if json.loads(response_json1.text)['total_results'] > 200:
     # print("\n---------------------------------------------------")
 
     # Как только нашли сервис с максимальным числом ошибок сразу летит вэб-хук
-    webhook_url = 'https://hooks.slack.com/services/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'
+    webhook_url = 'https://hooks.slack.com/services/XXXXXXXX/XXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXX'
     slack_data = {'text': "<!here> Problem!\n Started at " + time_now.strftime("%H:%M on %d-%m-%Y") + " \nSQL Exception more 200 from *" + name_services[max_exc_index] + "*! Responsible Team - *" + name_team[max_exc_index] + "*\n Host: Graylog-Prod"}
 
     response = requests.post(
